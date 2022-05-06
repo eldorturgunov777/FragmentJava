@@ -26,6 +26,16 @@ public class FirstFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(requireContext());
+        adapter = new ContactsAdapter(contacts);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        list();
+        return view;
+    }
+
+    public void list() {
         contacts.add("1234");
         contacts.add("1234");
         contacts.add("xzv");
@@ -34,11 +44,13 @@ public class FirstFragment extends Fragment {
         contacts.add("zvzxv");
         contacts.add("zv");
         contacts.add("1234");
-        recyclerView.setHasFixedSize(true);
-        layoutManager=new LinearLayoutManager(requireContext());
-        adapter = new ContactsAdapter(contacts);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-        return view;
+        contacts.add("1234");
+        contacts.add("1234");
+        contacts.add("xzv");
+        contacts.add("zvzx");
+        contacts.add("123zxv4");
+        contacts.add("zvzxv");
+        contacts.add("zv");
+        contacts.add("1234");
     }
 }
